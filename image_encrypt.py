@@ -12,14 +12,14 @@ def process_img(choice,key,image_path):
             if choice == 1:
                 r, g, b =pixels[x,y]
                 r = (r+key) % 256
-                g = (g+key) % 256
-                b = (b+key) % 256
+                g = (g+key+key) % 256
+                b = (b+key+key+key) % 256
                 pixels[x,y] = r,g,b
             elif choice ==2:
                 r, g, b =pixels[x,y]
                 r = (r-key) % 256
-                g = (g-key) % 256
-                b = (b-key) % 256
+                g = (g-key-key) % 256
+                b = (b-key-key-key) % 256
                 pixels[x,y] = r,g,b
     if choice == 1:
         img.save("encrypted_sample.jpg")
